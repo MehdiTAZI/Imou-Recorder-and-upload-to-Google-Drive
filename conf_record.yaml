@@ -1,0 +1,44 @@
+# ===============================
+# Configuration de l'enregistreur
+# ===============================
+nvr:
+  ip: "XXXXXXXX"           # Adresse IP du NVR
+  port: 554                      # Port RTSP utilisé par le NVR
+  username: "XXXXXXXXXXXX"           # Identifiant autorisé à lire les flux
+  password: "XXXXXXXXXXXX"   # Mot de passe du compte ci-dessus
+  transport: "tcp"               # Transport RTSP (tcp recommandé)
+
+recording:
+  interval_seconds: 180            # Durée nominale de capture par segment
+  overrun_seconds: 5              # Durée supplémentaire pour absorber le handshake RTSP
+  stdout_log: "logs/record_stdout.log"   # Logs d'information et d'avertissement
+  error_log: "logs/record_errors.log"    # Logs d'erreurs
+  encoding:                       # Configuration optionnelle d'encodage (laisser vide ou none pour copier le flux)
+    video_codec: "copy"        # Exemple: libx265 pour HEVC, libx264, ffv1, copy
+    lossless: true                # true pour activer le mode lossless si supporté (H.264/H.265)
+    preset: "medium"              # Profil d'encodage (fast, medium, slow...) si applicable
+    audio_codec: "copy"           # Codec audio (copy, flac, aac, etc.). Ignoré si enable_audio=false
+
+storage:
+  local_base_path: "data/cams"           # Dossier local où stocker les vidéos
+  queue_file: "data/track.upload"        # Fichier de suivi des uploads en attente
+
+cameras:
+  - channel: 1                    # Canal RTSP sur le NVR
+    name: "Salon 1"               # Nom du dossier et des fichiers générés
+    enable_audio: true            # true pour capturer l'audio
+  - channel: 2
+    name: "Salon 2"
+    enable_audio: true
+  - channel: 3
+    name: "Terrasse 1"
+    enable_audio: true
+  - channel: 4
+    name: "Terrasse 2"
+    enable_audio: true
+  - channel: 5
+    name: "Chambre 1"
+    enable_audio: true
+  - channel: 6
+    name: "Chambre 2"
+    enable_audio: true
