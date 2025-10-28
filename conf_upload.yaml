@@ -1,0 +1,20 @@
+# ===============================
+# Configuration de l'uploader
+# ===============================
+google_drive:
+  credentials_file: "mycreds.json"     # Jetons OAuth générés par PyDrive2
+  base_folder_id: "GOOGLE DRIVE FOLDER ID"
+  #base_folder_name: "CCTV_Archive"     # Nom du dossier racine sur Google Drive (ignoré si base_folder_id défini)
+
+storage:
+  local_base_path: "data/cams"          # Répertoire local où les vidéos sont stockées
+  queue_file: "data/track.upload"       # Fichier partagé listant les fichiers à uploader
+  delete_after_upload: true              # Supprimer les vidéos locales après upload réussi
+
+logging:
+  stdout_log: "logs/upload_stdout.log"  # Logs d'activités normales
+  error_log: "logs/upload_errors.log"   # Logs d'erreurs et d'échecs
+
+scheduler:
+  idle_sleep_seconds: 5                  # Temps d'attente quand la file est vide
+  retry_sleep_seconds: 60                # Temps d'attente après un échec d'upload
