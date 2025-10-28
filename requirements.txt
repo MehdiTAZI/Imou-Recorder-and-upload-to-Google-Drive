@@ -1,3 +1,4 @@
 pydrive2
 PyYAML
 packaging
+imageio-ffmpeg
