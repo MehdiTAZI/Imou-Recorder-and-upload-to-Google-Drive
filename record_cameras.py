@@ -8,6 +8,8 @@ from urllib.parse import quote
 
 import yaml
 
+import imageio_ffmpeg
+
 from queue_utils import enqueue_entry
 
 
@@ -125,8 +127,10 @@ def record_camera(
         f"?channel={cam['channel']}&subtype=0"
     )
 
+    ffmpeg_path = imageio_ffmpeg.get_ffmpeg_exe()
+
     cmd = [
-        "ffmpeg",
+        ffmpeg_path,
         "-hide_banner",
         "-loglevel",
         "warning",
