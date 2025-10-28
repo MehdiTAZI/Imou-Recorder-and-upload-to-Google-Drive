@@ -1,0 +1,14 @@
+choose authentication method (client or OAuth) : https://chatgpt.com/c/68ffbf79-3a88-832c-ae34-5578dcea337b
+Create dedicated application
+Limit Scope
+ask for it validation
+Ensure the solution is easier configurable on RaspBerry
+Create RaspBerryPI Image that is working with everything and that is easier configurable.
+Secure application to not be used by others
+Sell it : PowerPoint gain, avantage, comparer a un disk dur ou au cloud Imou, etc.
+Rotation des clés
+rotation des données (TTL : application appart)
+meilleur encoder ?
+
+----
+
